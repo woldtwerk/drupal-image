@@ -1,0 +1,34 @@
+{#
+/**
+ * @file
+ * Default theme implementation of a responsive image.
+ *
+ * Available variables:
+ * - sources: The attributes of the <source> tags for this <picture> tag.
+ * - img_element: The controlling image, with the fallback image in srcset.
+ * - output_image_tag: Whether or not to output an <img> tag instead of a
+ *   <picture> tag.
+ *
+ * @see template_preprocess()
+ * @see template_preprocess_responsive_image()
+ *
+ * @ingroup themeable
+ */
+#}
+
+<div class='responsive-image-wrapper'>
+  <style>
+    {{ responsive_image_style.style|raw }}
+  </style>
+  <div data-ris='{{ responsive_image_style.uuid }}' aria-hidden='true' style='width:100%'></div>
+  <img alt aria-hidden='true' src='{{ base_64_data }}' style='width: 100%; height: 100%;' />
+  <picture>
+    {% if sources %}
+      {% for source_attributes in sources %}
+        <source{{ source_attributes }}/>
+      {% endfor %}
+    {% endif %}
+    {# The controlling image, with the fallback image in srcset. #}
+    {{ img_element }}
+  </picture>
+</div>

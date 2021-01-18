@@ -1,0 +1,8 @@
+woldtwerk.image:
+  css:
+    layout:
+      css/woldtwerk.image.css: {}
+  js:
+    js/woldtwerk.image.js: {}
+  dependencies:
+    - core/drupal

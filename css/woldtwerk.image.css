@@ -1,0 +1,23 @@
+.responsive-image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.responsive-image-wrapper > img {
+  opacity: 1;
+  filter: blur(10px);
+}
+
+.responsive-image-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition-delay: 500ms;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.responsive-image-wrapper picture img {
+  transition: opacity 500ms ease 0s;
+  opacity: 0;
+}
