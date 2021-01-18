@@ -1,5 +1,5 @@
-(($, Drupal) => {
-  Drupal.behaviors.testBehavior = {
+(Drupal => {
+  Drupal.behaviors.woldtwerkResponsiveImage = {
     attach(context) {
       const fadeInImage = image => {
         image.style.opacity = 1;
@@ -8,7 +8,7 @@
 
       context
         .querySelectorAll('.responsive-image-wrapper')
-        .once('rimg')
+        .once('woldtwerkResponsiveImage')
         .forEach(rImg => {
           const image = rImg.querySelector('picture img');
           if (image.complete) {
@@ -21,4 +21,4 @@
         });
     },
   };
-})(jQuery, Drupal);
+})(Drupal);
