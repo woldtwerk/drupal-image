@@ -1,9 +1,0 @@
-{
-  "name": "drupal/woldtwerk_image",
-  "type": "drupal-module",
-  "description": "0 CLS responsive images",
-  "keywords": ["Drupal", "CLS", "responsive", "image"],
-  "license": "GPL-2.0",
-  "authors": [{ "name": "Willi Woldt" }],
-  "homepage": "https://github.com/woldtwerk/drupal-image"
-}
