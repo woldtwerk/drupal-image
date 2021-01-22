@@ -4,7 +4,7 @@ Drupal Module which provides:
 - blurup effect
 - native chrome lazyloading
 
-Drupal Responsive Images Core Module does not provide Images with explicit width and height. When you do a Lighthouse Test you'll get the notified of that. 
+Drupal Responsive Images Core Module does not provide Images with explicit width and height. When you do a Lighthouse Test you'll get notified of that. 
 Also you get a bad CLS value, because the Browser doesn't know the dimensions of the Image. That means when the image is loaded the layout will be pushed
 downwards. You can learn more about CLS here: https://web.dev/cls/
 
