@@ -34,3 +34,5 @@ Add this to your composer.json to install:
   ...
 }
 ```
+
+View in action: https://codepen.io/wiwo/pen/gOwJYBd
