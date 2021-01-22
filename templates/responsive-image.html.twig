@@ -15,20 +15,23 @@
  * @ingroup themeable
  */
 #}
-
-<div class='responsive-image-wrapper'>
-  <style>
-    {{ responsive_image_style.style|raw }}
-  </style>
-  <div data-ris='{{ responsive_image_style.uuid }}' aria-hidden='true' style='width:100%'></div>
-  <img alt aria-hidden='true' src='{{ base_64_data }}' style='width: 100%; height: 100%;' />
-  <picture>
-    {% if sources %}
-      {% for source_attributes in sources %}
-        <source{{ source_attributes }}/>
-      {% endfor %}
-    {% endif %}
-    {# The controlling image, with the fallback image in srcset. #}
-    {{ img_element }}
-  </picture>
-</div>
+{% if output_image_tag %}
+  {{ img_element }}
+{% else %}
+  <div class='responsive-image-wrapper'>
+    <style>
+      {{ responsive_image_style.style|raw }}
+    </style>
+    <div data-ris='{{ responsive_image_style.uuid }}' aria-hidden='true' style='width:100%'></div>
+    <img alt aria-hidden='true' src='{{ base_64_data }}' style='width: 100%; height: 100%;' />
+    <picture>
+      {% if sources %}
+        {% for source_attributes in sources %}
+          <source{{ source_attributes }}/>
+        {% endfor %}
+      {% endif %}
+      {# The controlling image, with the fallback image in srcset. #}
+      {{ img_element }}
+    </picture>
+  </div>
+{% endif %}
