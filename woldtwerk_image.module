@@ -107,4 +107,7 @@ function woldtwerk_image_preprocess_responsive_image(&$variables) {
     $base_64_image = base64_encode($image_file);
     $variables['base_64_data'] = "data:$image_type;base64,$base_64_image";
   }
+  else {
+    $fallback_image_style->createDerivative($image->getSource(), $fallback_image_uri);
+  }
 }
